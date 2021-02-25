@@ -7,10 +7,10 @@
 <!-- ADD erb code link/button to allow user to add a movie to the list -->
 <!--next create a _button.scss file with the buttons CSS -->
 <!-- then in index.scss don't foregt to @import "button"; -->
-<%= link_to "Add a movie", "#", class: "btn-ghost" %>
-
-<%= link_to "Delete a movie", "#", class: "btn-ghost" %>
-
+<div class="button_box m-4">
+  <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn-ghost" %>
+  <%= link_to "All your lists", lists_path, class: "btn-ghost" %>
+</div>
 
 
 <!-- how do you display the movies? with a card -->

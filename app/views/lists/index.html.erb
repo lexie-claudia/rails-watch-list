@@ -1,16 +1,25 @@
-<%#= form_for(@list) do |f| %>
-  <%#= f.label :name %>
-  <%#= f.text_field :name %>
-  <%#= f.submit %>
-<%# end %>
-<h1>All your lists</h1>
+<!-- add a banner with a cool pic from unspash.com. right click and copy image address -->
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1867&q=80);">
+  <div class="container">
+    <h1>ONES TO WATCH. <strong>Take</strong> a little <strong>time out</strong>!</h1>
+    <p>In a world without travel, transport your mind somewhere else</p>
+  </div>
+</div>
 
-<div class="container">
+
+<div class="container col-8">
+  <h1 class="mb-3">All your lists</h1>
+  <%= link_to "Create new list", new_list_path, class: "btn-ghost" %>
   <div class="row">
     <% @lists.each do |list| %>
-      <div class="card col-4">
-        <%= list.name %>
+      <div class="card col-8 mt-4">
+        <!-- make this a link -->
+
+        <%= link_to list.name, list_path(list) %>
       </div>
     <% end %>
   </div>
 </div>
+
+<!-- add a link to create a new list -->
+
