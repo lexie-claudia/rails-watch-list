@@ -1,1 +1,16 @@
+<%#= form_for(@list) do |f| %>
+  <%#= f.label :name %>
+  <%#= f.text_field :name %>
+  <%#= f.submit %>
+<%# end %>
+<h1>All your lists</h1>
 
+<div class="container">
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="card col-4">
+        <%= list.name %>
+      </div>
+    <% end %>
+  </div>
+</div>

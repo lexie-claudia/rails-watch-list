@@ -1,1 +1,32 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1569003339405-ea396a5a8a90?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+
+<!-- ADD erb code link/button to allow user to add a movie to the list -->
+<!--next create a _button.scss file with the buttons CSS -->
+<!-- then in index.scss don't foregt to @import "button"; -->
+<%= link_to "Add a movie", "#", class: "btn-ghost" %>
+
+<%= link_to "Delete a movie", "#", class: "btn-ghost" %>
+
+
+
+<!-- how do you display the movies? with a card -->
+<div class="container">
+  <div class="row">
+    <!--here you go into lists located in the movie file -->
+    <% @list.movies.each do |movie| %>
+    <div class="col-4 card rounded p-2 m-2">
+      <!--this img tag allows you to access form the seed the saved movie.poster_url (image link) -->
+      <img src="<%= movie.poster_url %>" alt="">
+      <h3 class="mt-2"><%= movie.title %></h3>
+      <p><%= movie.overview %></p>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
 
